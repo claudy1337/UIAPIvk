@@ -148,7 +148,7 @@ namespace UIKitTutorials.Pages
                 ApplicationId = 8165811,
                 Settings = Settings.All
             });
-            // Получить адрес сервера для загрузки.
+
             try
             {
                 api.Messages.Send(new MessagesSendParams()

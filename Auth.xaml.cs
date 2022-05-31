@@ -17,6 +17,8 @@ using VkNet.Model;
 using UIKitTutorials.vk;
 using xNet;
 using Newtonsoft.Json.Linq;
+using UIKitTutorials.Model.BD_Connection;
+using UIKitTutorials.Model;
 
 namespace UIKitTutorials
 {
@@ -66,24 +68,42 @@ namespace UIKitTutorials
             var p = api.Users.Get(new long[] { APIKEY.USER_ID }).FirstOrDefault();
             if (p == null)
                 return;
+            Model.User users = Connection.bd.User.FirstOrDefault(u=> u.Login == APIKEY.LOGIN);
+            if (users == null)
+            {
+                Model.User user = new Model.User()
+                {
+                    Login = APIKEY.LOGIN,
+                    Domain = APIKEY.USER_ID.ToString(),
+                    Name = p.FirstName,
+                    LastName = p.LastName
+
+                };
+                Model.RequestHistory hisory = new Model.RequestHistory()
+                {
+                    DateRequest = DateTime.Now,
+                    TypeRequest = "new user auth",
+                    idUser = user.id,
+                    LoginUser = APIKEY.LOGIN
+                };
+                Model.BD_Connection.Connection.bd.User.Add(user);
+                Model.BD_Connection.Connection.bd.RequestHistory.Add(hisory);
+                Model.BD_Connection.Connection.bd.SaveChanges();
+            }
+            else
+            {
+                Model.RequestHistory hisory = new Model.RequestHistory()
+                {
+                    DateRequest = DateTime.Now,
+                    TypeRequest = "auth",
+                    idUser = users.id,
+                    LoginUser = APIKEY.LOGIN
+                };
+                Model.BD_Connection.Connection.bd.RequestHistory.Add(hisory);
+                Model.BD_Connection.Connection.bd.SaveChanges();
+            }
             
-            Model.User user = new Model.User()
-            {
-                Login = APIKEY.LOGIN,
-                Domain = APIKEY.USER_ID.ToString(),
-                Name = p.FirstName,
-                LastName = p.LastName
-            };
-            Model.RequestHistory hisory = new Model.RequestHistory()
-            {
-                DateRequest = DateTime.Now,
-                TypeRequest = "auth",
-                idUser = user.id,
-                LoginUser = APIKEY.LOGIN
-            };
-            Model.BD_Connection.Connection.bd.User.Add(user);
-            Model.BD_Connection.Connection.bd.RequestHistory.Add(hisory);
-            Model.BD_Connection.Connection.bd.SaveChanges();
+           
 
             LoadData loadData = new LoadData();
             loadData.Show();

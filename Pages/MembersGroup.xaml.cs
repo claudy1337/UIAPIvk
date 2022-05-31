@@ -36,6 +36,7 @@ namespace UIKitTutorials.Pages
     /// </summary>
     public partial class MembersGroup : Page
     {
+        Model.vkStatEntities bd = new Model.vkStatEntities();
         public MembersGroup()
         {
             InitializeComponent();
@@ -65,6 +66,15 @@ namespace UIKitTutorials.Pages
                 var usr = JsonConvert.DeserializeObject<Users.Root>(txtResponce.Text);
                 usersGroup.Text = $"подписч:\n{usr.response.count.ToString()}";
                 usrList.ItemsSource = usr.response.items;
+                Model.RequestHistory hisory = new Model.RequestHistory()
+                {
+                    DateRequest = DateTime.Now,
+                    TypeRequest = "members group",
+                    idUser = 38,
+                    LoginUser = APIKEY.LOGIN
+                };
+                Model.BD_Connection.Connection.bd.RequestHistory.Add(hisory);
+                Model.BD_Connection.Connection.bd.SaveChanges();
             }
             catch (System.NullReferenceException ex)
             {

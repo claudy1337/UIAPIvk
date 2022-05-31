@@ -50,9 +50,7 @@ namespace UIKitTutorials
         }
 
         private void rdHome_Click(object sender, RoutedEventArgs e)
-        {
-           // PagesNavigation.Navigate(new HomePage());
-            
+        {   
             PagesNavigation.Navigate(new System.Uri("Pages/Account.xaml", UriKind.RelativeOrAbsolute));
         }
 
@@ -80,6 +78,11 @@ namespace UIKitTutorials
         private void rdGroup_Click(object sender, RoutedEventArgs e)
         {
             PagesNavigation.Navigate(new System.Uri("Pages/UserStatPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdShowUser_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/UserInfoPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

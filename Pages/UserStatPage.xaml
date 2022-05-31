@@ -14,17 +14,16 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Width="100" x:Name="BBack" Content="Back" Click="BBack_Click" HorizontalAlignment="Left" Background="#388F72" Margin="5,5,0,5" Cursor="Hand"/>
-            <Button Width="100" Background="#388F72" Content="Delete" HorizontalAlignment="Right" Margin="575,5,0,0" x:Name="Bdelete" Click="Bdelete_Click"/>
+            <Button Width="100" Background="#388F72" Content="Delete" HorizontalAlignment="Left" x:Name="Bdelete" Click="Bdelete_Click"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" x:Name="DGCar" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"  Margin="0,28,0,0">
+        <DataGrid Grid.Row="1" x:Name="DGUser" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"  Margin="0,28,0,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="LoginUser" Binding="{Binding LoginUser}"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding User.Name}"/>
                 <DataGridTextColumn Header="LastName" Binding="{Binding User.LastName}"/>
-                <DataGridTextColumn Header="DateRequest" Binding="{Binding DateRequest}"/>
-                <DataGridTextColumn Header="DateRequest" Binding="{Binding DateRequest}"/>
+                <DataGridTextColumn Header="Date Request" Binding="{Binding DateRequest}"/>
+                <DataGridTextColumn Header="Type Request" Binding="{Binding TypeRequest}"/>
 
             </DataGrid.Columns>
         </DataGrid>

@@ -53,11 +53,13 @@
                     </ToggleButton>
 
                     <StackPanel Grid.Row="3">
-                        <RadioButton x:Name="rdHome" IsChecked="True" Content="Account" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdHome_Click"/>
-                        <RadioButton x:Name="rdSounds" Content="Members Group" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource headphones}" Margin="0 5 0 5" Click="rdSounds_Click"/>
-                        <RadioButton x:Name="rdNotes" Content="Notes" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>
-                        <RadioButton x:Name="rdPayment" Content="Messanger" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource payment}" Margin="0 5 0 5" Click="rdPayment_Click"/>
-                        <RadioButton x:Name="rdGroup" Content="Group" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource headphones}" Margin="0 5 0 5" Click="rdGroup_Click"/>
+                        <RadioButton x:Name="rdHome" IsChecked="True" Content="Account" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource acc}" Click="rdHome_Click"/>
+                        <RadioButton x:Name="rdSounds" Content="Members Group" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource group}" Margin="0 5 0 5" Click="rdSounds_Click"/>
+                        <RadioButton x:Name="rdNotes" Content="Notes Group" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource json}" Click="rdNotes_Click"/>
+                        <RadioButton x:Name="rdPayment" Content="Messanger" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource mess}" Margin="0 5 0 5" Click="rdPayment_Click"/>
+                        <RadioButton x:Name="rdGroup" Content="Request History" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource groups}" Margin="0 5 0 5" Click="rdGroup_Click"/>
+                        <RadioButton x:Name="rdShowUser" Content="User Show" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource info}" Margin="0 5 0 5" Click="rdShowUser_Click" Cursor="Hand"/>
+                        <RadioButton x:Name="rdJsonUser" Content="Notes User" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource json}" Click="rdNotes_Click"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal" Width="200" Margin="0 0 0 20">

@@ -218,10 +218,17 @@
     <Compile Include="Pages\Messanger.xaml.cs">
       <DependentUpon>Messanger.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Stats.xaml.cs">
+      <DependentUpon>Stats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserInfoPage.xaml.cs">
+      <DependentUpon>UserInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserStatPage.xaml.cs">
       <DependentUpon>UserStatPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="vk\APIKEY.cs" />
+    <Compile Include="vk\OpenAPIKEY.cs" />
     <Compile Include="vk\Utility.cs" />
     <Page Include="Assets\Icons\Icons.xaml">
       <SubType>Designer</SubType>
@@ -271,6 +278,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SoundsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Stats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
